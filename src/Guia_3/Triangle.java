@@ -1,41 +1,42 @@
 package Guia_3;
 
-public class Triangle extends figure{
+public class Triangle extends Figure {
 
-    Triangle(Point point1,Point point2,Point point3){
-        super();
-        points = new Point[3];
-        points[0] = point1;
-        points[1] = point2;
-        points[2] = point3;
+    private final Point firstPoint, secondPoint, thirdPoint;
 
+    public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint) {
+        this.firstPoint = firstPoint;
+        this.secondPoint = secondPoint;
+        this.thirdPoint = thirdPoint;
     }
 
     @Override
-    void setBase(){
-        if(points[0].getX() != points[1].getX()){
-            base = points[0].distX(points[1]);
-        }else{
-            base = points[0].distX(points[2]);
-        }
+    public double area() {
+        double semiPerimiter = perimeter() / 2;
+        return Math.sqrt(semiPerimiter * (semiPerimiter - firstSide())
+                * (semiPerimiter - secondSide()) * (semiPerimiter - thirdSide()));
     }
 
     @Override
-    void setHeight(){
-        if(points[0].getY() != points[1].getY()){
-            height = points[0].distY(points[1]);
-        }else{
-            height = points[0].distY(points[2]);
-        }
+    public double perimeter() {
+        return firstSide() + secondSide() + thirdSide();
+    }
+
+    private double firstSide() {
+        return firstPoint.distanceTo(secondPoint);
+    }
+
+    private double secondSide() {
+        return secondPoint.distanceTo(thirdPoint);
+    }
+
+    private double thirdSide() {
+        return thirdPoint.distanceTo(firstPoint);
     }
 
     @Override
-    public double area(){
-        return height * base *0.5;
+    public String toString() {
+        return String.format("Triángulo [ %s , %s , %s ]", firstPoint, secondPoint, thirdPoint);
     }
 
-    @Override
-    public double perimeter(){
-        return points[0].distanceTo(points[1]) + points[0].distanceTo(points[2]) + points[1].distanceTo(points[2]);
-    }
 }

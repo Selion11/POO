@@ -1,26 +1,29 @@
 package Guia_3;
 
-public class Ellipse extends figure{
+public class Ellipse extends Figure {
 
-    public Ellipse(Point point,int a,int b) {
-        super();
+    protected final Point centerPoint;
+    protected final double sMayorAxis, sMinorAxis;
+
+    public Ellipse(Point centerPoint, double sMayorAxis, double sMinorAxis) {
+        this.centerPoint = centerPoint;
+        this.sMayorAxis = sMayorAxis;
+        this.sMinorAxis = sMinorAxis;
     }
 
     @Override
-    void setBase(){
+    public double area() {
+        return Math.PI / 4 * sMayorAxis * sMinorAxis;
     }
 
     @Override
-    void setHeight(){
+    public double perimeter() {
+        return Math.PI / 2 * (sMayorAxis + sMinorAxis);
     }
 
     @Override
-    double area(){
-        return height * base;
+    public String toString() {
+        return String.format("Elipse [Centro: %s, DMayor: %.2f, DMenor: %.2f]", centerPoint, sMayorAxis, sMinorAxis);
     }
 
-    @Override
-    double perimeter(){
-        return (base * 2) + (height *2);
-    }
 }
