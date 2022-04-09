@@ -7,7 +7,7 @@ abstract class subwayCard{
     }
     protected abstract void viajar();
 
-    protected abstract boolean canTravel();
+    protected abstract boolean canTravel() throws CannotRideException;
 
     protected double getCost(){
         return central.getCost();
