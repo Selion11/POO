@@ -22,8 +22,8 @@ public class figureTester {
         System.out.println(myRectangle);
         System.out.println(String.format("%.2f", myRectangle.perimeter()));
         System.out.println(String.format("%.2f", myRectangle.area()));
-        System.out.println(String.format("%.2f", myRectangle.base));
-        System.out.println(String.format("%.2f", myRectangle.height));
+       // System.out.println(String.format("%.2f", myRectangle.base));
+       // System.out.println(String.format("%.2f", myRectangle.height));
 
         Triangle myTriangle = new Triangle(new Point(0, 0), new Point(1, 0), new Point(0, 1));
         System.out.println(myTriangle);

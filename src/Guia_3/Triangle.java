@@ -2,7 +2,7 @@ package Guia_3;
 
 public class Triangle extends Figure {
 
-    private final Point firstPoint, secondPoint, thirdPoint;
+    protected Point firstPoint, secondPoint, thirdPoint;
 
     public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint) {
         this.firstPoint = firstPoint;

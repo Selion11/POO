@@ -2,8 +2,8 @@ package Guia_3;
 
 public class Ellipse extends Figure {
 
-    protected final Point centerPoint;
-    protected final double sMayorAxis, sMinorAxis;
+    protected Point centerPoint;
+    protected double sMayorAxis, sMinorAxis;
 
     public Ellipse(Point centerPoint, double sMayorAxis, double sMinorAxis) {
         this.centerPoint = centerPoint;
