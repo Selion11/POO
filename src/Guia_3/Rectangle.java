@@ -1,31 +1,35 @@
 package Guia_3;
 
-public class Rectangle extends figure{
+public class Rectangle extends Figure {
 
-    public Rectangle(Point point1,Point point2){
-        super();
-        points = new Point[2];
-        points[0] = point1;
-        points[1] = point2;
+    private final Point topLeft, bottomRight;
+
+    public Rectangle(Point topLeft, Point bottomRight) {
+        this.topLeft = topLeft;
+        this.bottomRight = bottomRight;
+    }
+
+    public double base() {
+        return Math.abs(topLeft.getX() - bottomRight.getX());
+    }
+
+    public double height() {
+        return Math.abs(topLeft.getY() - bottomRight.getY());
     }
 
     @Override
-    void setBase(){
-        this.base = points[0].distX(points[1]);
+    public double area() {
+        return base() * height();
     }
 
     @Override
-    void setHeight(){
-        this.height = points[0].distY(points[1]);
+    public double perimeter() {
+        return (base() + height()) * 2;
     }
 
     @Override
-    double area(){
-        return height * base;
+    public String toString() {
+        return String.format("Rectángulo [ %s , %s ]", topLeft, bottomRight);
     }
 
-    @Override
-     double perimeter(){
-        return (base * 2) + (height *2);
-    }
 }
