@@ -32,7 +32,9 @@ public class LimitedExam extends UniqueExam{
         super.unenroll(student);
         if(howManyPending() > 0) {
             super.enroll(listaDeEspera[0]);
-            System.arraycopy(listaDeEspera, 1, listaDeEspera, 0, EN_ESPERA - 1);
+            for(int i = 0;i < EN_ESPERA;i++) {
+                System.arraycopy(listaDeEspera, i+1, listaDeEspera, i, EN_ESPERA - 1);
+            }
             EN_ESPERA -= 1;
         }
     }
