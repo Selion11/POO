@@ -1,6 +1,6 @@
 package Guia4;
 
-public interface Function {
+public interface Function{
 
     double evaluate(double x);
 

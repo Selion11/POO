@@ -30,7 +30,7 @@ abstract class account{
 
 public class BankAccountTester{
         public static void main(String[] args) {
-            CheckingAccount myCheckingAccount = new CheckingAccount(1001, 50);
+            /*CheckingAccount myCheckingAccount = new CheckingAccount(1001, 50);
             myCheckingAccount.deposit(100.0);
             System.out.println(myCheckingAccount);
             myCheckingAccount.extract(150.0);
@@ -41,5 +41,18 @@ public class BankAccountTester{
             System.out.println(mySavingsAccount);
             mySavingsAccount.extract(150.0); // No se realiza por falta de fondos
             System.out.println(mySavingsAccount);
+          */
+            Bank bank = new Bank();
+            account c1 = new CheckingAccount(1234, 5000);
+            account c2 = new CheckingAccount(3462, 5000);
+            bank.addAccount(c1);
+            bank.addAccount(c2);
+            System.out.println(bank.accountSize());
+            System.out.println(bank.totalAmount());
+            c1.deposit(100);
+            c2.deposit(200);
+            bank.removeAccount(c2);
+            System.out.println(bank.accountSize());
+            System.out.println(bank.totalAmount());
         }
 }
