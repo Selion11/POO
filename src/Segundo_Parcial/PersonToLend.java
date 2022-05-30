@@ -6,28 +6,28 @@ public class PersonToLend {
     private String name;
     private TimesForLend role;
 
-    public PersonToLend(String name, TimesForLend role){
+    public PersonToLend(String name, TimesForLend role) {
         this.role = role;
         this.name = name;
     }
 
-    public int getDays(){
+    public int getDays() {
         return role.getTime();
     }
 
     @Override
-    public boolean equals(Object o){
-        if(this == o){
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if(!(o instanceof PersonToLend person)){
+        if (!(o instanceof PersonToLend person)) {
             return false;
         }
         return name.equals(person.name);
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(name);
     }
 

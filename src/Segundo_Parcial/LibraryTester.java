@@ -6,7 +6,7 @@ public class LibraryTester {
     public static void main(String[] args) {
         // Ejemplo de uso para determinar si una fecha está después que otra fecha
         System.out.println(LocalDate.of(2018,12,3).isAfter(LocalDate.of(2018,12,1)));
-
+        System.out.println();
         Library library = new Library().addBook("Book 1", 1).addBook("Book 2", 1).addBook("Book 3", 3);
 
         // El estudiante Student 1 pide el libro Book 1

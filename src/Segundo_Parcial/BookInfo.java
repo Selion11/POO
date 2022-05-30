@@ -19,5 +19,4 @@ public class BookInfo {
     public void returnBook() {
         stock++;
     }
-
 }
